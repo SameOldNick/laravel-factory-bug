@@ -28,6 +28,8 @@ class BugTest extends TestCase
                 'name' => 'Test User',
                 'email' => 'test@example.com',
             ]);
+
+            $this->assertTrue(true);
         } catch (QueryException $e) {
             /**
              * This will fail with the following message:
