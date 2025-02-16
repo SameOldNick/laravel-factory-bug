@@ -36,4 +36,17 @@ class BugTest extends TestCase
             $this->fail('QueryException: ' . $e->getMessage());
         }
     }
+
+    /**
+     * Tests factories have different model names.
+     *
+     * @return void
+     */
+    public function test_model_names_different()
+    {
+        $roleFactory = Role::factory();
+        $userFactory = User::factory();
+
+        $this->assertNotEquals($roleFactory->modelName(), $userFactory->modelName());
+    }
 }
